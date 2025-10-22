@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <div id="result"></div>
+
+
+  <script>
+
+      const result = document.getElementById("result");
+
+    const products = [
+      {name:"Shampoo" , price:5},
+      {name:"Soap" , price:3},
+      {name:"Perfume" , price:20}
+    ];
+
+let total = 0;
+let max = 0;
+let maxName = "";
+
+products.forEach(item => {
+  total += item.price;
+  if (item.price > max) {
+    max = item.price;
+    maxName = item.name;
+  }
+});
+
+result.innerHTML = `
+  <p>Total price: $${total}</p>
+  <p>Most expensive: ${maxName} ($${max})</p>
+`;
+
+
+
+  </script>
+
+</body>
+</html>
