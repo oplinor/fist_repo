@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    #display{
+      width: 100px;
+      height: 50px;
+      background-color: lightpink;
+    }
+
+
+  </style>
+
+</head>
+<body>
+
+  <div class="container"> 
+    <div id="display"></div>
+
+    <div>
+      <td><button value="7" class="button">7</button></td>
+      <td><button value="8" class="button">8</button></td>
+      <td><button value="9" class="button">9</button></td>
+    </div>
+
+    <div>
+      <td><button value="4" class="button">4</button></td>
+      <td><button value="5 " class="button">5</button></td>
+      <td><button value="6" class="button">6</button></td>
+    </div>
+
+    <div>
+      <td><button value="1" class="button">1</button></td>
+      <td><button value="2" class="button">2</button></td>
+      <td><button value="3" class="button ">3</button></td>
+    </div>
+
+    <div>
+      <td><button class="button" value="+">+</button></td>
+      <td><button class="button" value="-">-</button></td>
+      <td><button class="button" value="*">*</button></td>
+    </div>
+
+    <div>
+      <td><button class="button" value="/">/</button></td>
+      <td><button class="button" value="0">0</button></td>
+      <td><button id="buttonC">c</button></td>
+      <td><button id="equal" class="button" value="equal">=</button></td>     
+    </div>
+
+  </div>
+
+    <!-- 
+    script part -->
+
+  <script>
+const btns = document.querySelectorAll(".button");
+const display = document.getElementById("display");
+const buttonC = document.getElementById("buttonC");
+const equalBtn = document.getElementById("equal");
+
+btns.forEach(btn => {
+  btn.addEventListener("click", () => {
+   
+    if (btn.id !== "equal") {
+      display.innerHTML += btn.value;
+    }
+  });
+});
+
+
+buttonC.addEventListener("click", () => {
+  display.innerHTML = "";
+});
+
+equalBtn.addEventListener("click", () => {
+ 
+    display.innerHTML = eval(display.innerHTML);
+
+});
+
+
+
+
+
+  </script>
+</body>
+</html>
